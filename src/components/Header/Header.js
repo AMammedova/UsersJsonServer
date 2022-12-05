@@ -70,7 +70,7 @@ const Header = ({users}) => {
     <div>
         <section>
         <div className='header'>
-            <Col lg='5' md='6'  sm='12'>
+            <Col>
             <div className="box mb-4">
     <form name="search">
         <input type="text" className="input" name="txt" onMouseOut={handleMouseOut} onChange={handleSearch}/>
@@ -80,7 +80,7 @@ const Header = ({users}) => {
 </div>
             
             </Col>
-            <Col lg='3' md='6'>
+            <Col>
             <div className="filter__widget mb-4">
                 <select onChange={handleFilter}>
                   <option value="default">Filter by Category</option>
@@ -91,7 +91,7 @@ const Header = ({users}) => {
                 </select>
               </div>
             </Col>
-            <Col lg="3" md='6' sm='12'>
+            <Col>
             <div className="filter__widget mb-4">
             <select defaultValue={'DEFAULT'}  onChange={(e) => setSortState(e.target.value)}>
               
@@ -104,7 +104,7 @@ const Header = ({users}) => {
       </select>
               </div></Col>
     
-            <Col lg='1' md='6'  sm='12'> 
+            <Col> 
             <Adduser/>
             </Col>
             
@@ -114,7 +114,7 @@ const Header = ({users}) => {
        
     <section>
     {
-                usersData.length === 0? <h1 className='text-center fs-4'>No users are founded</h1> :  <UserList users={usersData}/> 
+                usersData.length === 0? <h1 style={{marginTop:"15%"}} className='text-center fs-4'>No users are founded</h1> :  <UserList users={usersData}/> 
               }
     </section>
     </div>
