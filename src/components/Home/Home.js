@@ -12,7 +12,7 @@ const Home = () => {
     useEffect( ()=>{
       const fetchUser=async ()=>{
         try{
-          const response=await axios.get(`http://localhost:3000/users?_page=1&_limit=${limit}`);
+          const response=await axios.get(`http://localhost:5000/users?_page=1&_limit=${limit}`);
          
      setUsers(response.data);
      const total=response.headers.get('x-total-count');
@@ -24,7 +24,7 @@ const Home = () => {
      fetchUser()
     },[])
     const pageUsers= async(currentPage)=>{
-      const res= await axios.get(`http://localhost:3000/users?_page=${currentPage}&_limit=${limit}`)
+      const res= await axios.get(`http://localhost:5000/users?_page=${currentPage}&_limit=${limit}`)
       const curentUser=res.data;
       console.log(curentUser)
       return curentUser;
